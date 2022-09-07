@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     allBook() {
-      fetch('/server/book',
+      fetch('/.netlify/functions/books',
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((data) => {
@@ -49,7 +49,7 @@ export default {
         })
      },
      deleteBook(id) {
-       fetch('/server/book/'+id,
+       fetch('/.netlify/functions/books/'+id,
          { headers: {'Content-Type': 'application/json'},
    	       method: 'POST',
            body: JSON.stringify({'_method':'DELETE'})})
