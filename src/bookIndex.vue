@@ -36,7 +36,7 @@ export default {
       title: 'BookList'
     }
   },
-  onMounted () {
+  mounted () {
     this.allBook()
   },
   methods: {
