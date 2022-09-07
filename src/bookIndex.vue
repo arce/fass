@@ -46,7 +46,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           app.books = data;
-					console.log("data loaded");
+					console.log(data);
         })
      },
      deleteBook(id) {
