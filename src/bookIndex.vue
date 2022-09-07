@@ -36,9 +36,9 @@ export default {
       title: 'BookList'
     }
   },
-  onMounted () {
+  onMounted(()=>{
     this.allBook()
-  },
+  }),
   methods: {
     allBook() {
       fetch('/.netlify/functions/books',
