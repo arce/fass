@@ -45,8 +45,7 @@ export default {
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((data) => {
-          app.books = data;
-					console.log(data);
+          App.books = data;
         })
      },
      deleteBook(id) {
