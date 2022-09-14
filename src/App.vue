@@ -26,9 +26,9 @@ export default {
     return {
       books: [],
 			authors: [],
-			publisher: []
+			publishers: []
     }
   },
-	emits: ['update:Books','update:Authors','update:Publishers']
+	emits: ['update:books','update:authors','update:publishers']
 }
 </script>
