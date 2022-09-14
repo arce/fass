@@ -32,6 +32,7 @@
 export default {
   data() {
     return {
+      books: [],
       title: 'BookList'
     }
   },
