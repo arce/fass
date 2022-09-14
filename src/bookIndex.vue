@@ -32,7 +32,7 @@
 export default {
   data() {
     return {
-			books: []
+      books: [],
       title: 'BookList'
     }
   },
@@ -41,8 +41,8 @@ export default {
       fetch('/.netlify/functions/books',
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
-        .then((data) => {
-          this.books = data;
+        .then((result) => {
+          this.books = result;
         })
      },
      deleteBook(id) {
@@ -50,7 +50,7 @@ export default {
          { headers: {'Content-Type': 'application/json'},
    	       method: 'POST',
            body: JSON.stringify({'_method':'DELETE'})})
-         .then((data) => {
+         .then((result) => {
           this.allBook();
           }
         )
