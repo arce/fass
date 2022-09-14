@@ -42,7 +42,7 @@ export default {
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((result) => {
-          this.$emit('update:books',result);
+          this.parent.$emit('update:books',result);
         })
      },
      deleteBook(id) {
