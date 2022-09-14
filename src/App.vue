@@ -13,7 +13,9 @@
       </router-link>
     </div>
     <router-view
-      v-bind:books="books">
+      v-bind:books="books"
+			v-bind:authors="authors"
+			v-bind:publishers="publishers">
     </router-view>
   </div>
 </template>
@@ -22,8 +24,11 @@
 export default {
   data() {
     return {
-      books: []
+      books: [],
+			authors: [],
+			publisher: []
     }
-  }
+  },
+	emits: ['update:Books','update:Authors','update:Publishers']
 }
 </script>
