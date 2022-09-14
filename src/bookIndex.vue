@@ -43,6 +43,7 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           this.books = result;
+					app.books = this.books;
         })
      },
      deleteBook(id) {

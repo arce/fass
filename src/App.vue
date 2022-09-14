@@ -12,7 +12,8 @@
        to="/publisher">Publishers
       </router-link>
     </div>
-    <router-view>
+    <router-view
+      v-bind:books="books">
     </router-view>
   </div>
 </template>
@@ -25,18 +26,6 @@ export default {
 			authors: [],
 			publishers: []
     }
-  },
-	emits: {
-		update_books(items) {
-			console.log(items);
-			this.books = items;
-		},
-		update_authors(items) {
-			this.authors = items;
-		},
-		update_publishers(items) {
-			this.publishers = items;
-		}
-	}
+  }
 }
 </script>
