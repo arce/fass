@@ -35,7 +35,9 @@ const router = createRouter({
   routes: routes
 })
 
-const app = createApp(App)
+let app = createApp(App)
+
+app.config.globalProperties.books = []
 
 app.use(router)
 

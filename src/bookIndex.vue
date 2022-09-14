@@ -30,7 +30,6 @@
 <script>
 
 export default {
-	props: ['books'],
   data() {
     return {
       title: 'BookList'
@@ -42,7 +41,7 @@ export default {
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((result) => {
-          this.$emit('update_books',result);
+          this.books = result;
         })
      },
      deleteBook(id) {

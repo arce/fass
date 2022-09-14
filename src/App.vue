@@ -12,10 +12,7 @@
        to="/publisher">Publishers
       </router-link>
     </div>
-    <router-view
-      v-bind:books="books"
-			v-bind:authors="authors"
-			v-bind:publishers="publishers">
+    <router-view>
     </router-view>
   </div>
 </template>
