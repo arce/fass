@@ -29,6 +29,8 @@
 </template>
 <script>
 
+	import {ref} from 'vue'
+	
 export default {
   data() {
     return {
@@ -43,7 +45,6 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           this.books = result;
-					app.books = this.books;
         })
      },
      deleteBook(id) {
