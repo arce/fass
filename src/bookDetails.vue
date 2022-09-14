@@ -53,7 +53,7 @@ export default {
   data: function() {
     return {
       title: "Book Data",
-      prof: {'title':'','edition':'','copyright':'','language':'','pages':'','author':"",'publisher':''},
+      book: {'title':'','edition':'','copyright':'','language':'','pages':'','author':"",'publisher':''},
     }
   },
   created () {
@@ -62,10 +62,12 @@ export default {
   },
   methods: {
     findBook: function(id) {
-      var book = app.books.find(
-        function(x) { return x.id == id; });
-      if (book!=null)
-        Object.assign(this.book,book);
+      fetch('/.netlify/functions/books/'+id,
+        { headers: {'Accept': 'application/json'}})
+        .then((response) => response.json())
+        .then((result) => {
+          this.book = result;
+        })
     },
     updateBook: function() {
       this.prof['_method'] = 'PUT';
