@@ -31,6 +31,7 @@ export default {
   },
 	emits: {
 		update_books(items) {
+			console.log(items);
 			this.books = items;
 		},
 		update_authors(items) {
