@@ -54,7 +54,8 @@ export default {
     }
   },
   created () {
-   this.findBook(app.$route.params.id)
+   const route = useRoute();  
+   this.findBook(route.params.id)
   },
   methods: {
     findBook: function(id) {
@@ -65,7 +66,8 @@ export default {
     },
     updateBook: function() {
       this.prof['_method'] = 'PUT';
-      var id = app.$route.params.id;
+			const route = useRoute(); 
+      var id =route.params.id;
       fetch('/server/book/'+id,
         { headers: {'Content-Type':'application/json'},
           method: 'POST',
