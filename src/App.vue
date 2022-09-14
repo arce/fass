@@ -29,6 +29,16 @@ export default {
 			publishers: []
     }
   },
-	emits: ['update:books','update:authors','update:publishers']
+	emits: {
+		update_books(items) {
+			this.books = items;
+		},
+		update_authors(items) {
+			this.authors = items;
+		},
+		update_publishers(items) {
+			this.publishers = items;
+		}
+	}
 }
 </script>
