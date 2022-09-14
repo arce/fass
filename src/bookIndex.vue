@@ -30,14 +30,11 @@
 <script>
 
 export default {
-  props: ['books'],
-  data: function() {
+  data() {
     return {
+			books: []
       title: 'BookList'
     }
-  },
-  mounted() {
-    this.allBook()
   },
   methods: {
     allBook() {
@@ -58,6 +55,9 @@ export default {
           }
         )
      }
+  },
+  mounted() {
+    this.allBook()
   }
 }
 </script>
