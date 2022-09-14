@@ -1,4 +1,5 @@
 'use strict';
+const fs = require('fs');
 const express = require('express');
 const serverless = require('serverless-http');
 const exp = express();
