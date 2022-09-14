@@ -12,12 +12,18 @@
        to="/publisher">Publishers
       </router-link>
     </div>
-    <router-view>
+    <router-view
+      v-bind:books="books">
     </router-view>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      books: []
+    }
+  }
 }
 </script>

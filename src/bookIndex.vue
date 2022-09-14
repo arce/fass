@@ -30,9 +30,9 @@
 <script>
 
 export default {
+	props: ['books'],
   data() {
     return {
-      books: [],
       title: 'BookList'
     }
   },
