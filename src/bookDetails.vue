@@ -78,9 +78,6 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.book)})
         .then((data) => {
-          var index = app.books.findIndex(
-             function(x) { return x.id == id; });
-          app.books[index] = this.book;
           router.push('/book');
         }
       )
@@ -91,7 +88,6 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.book)})
         .then((data) => {
-           app.books.push(this.book);
            router.push('/book');
         }
       )
