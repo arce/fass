@@ -1,4 +1,3 @@
-<!-- src/bookIndex.vue -->
 <template>
   <div class="row">
    <div style="margin-top: 5%">
@@ -22,13 +21,13 @@
       </td>
       </tr></tbody>
      </table>
-     <router-link class="button button-primary" 
+     <router-link class="button button-primary"
        to="/book/create">New</router-link>
    </div>
   </div>
 </template>
 <script>
-	
+
 export default {
   data() {
     return {
@@ -38,7 +37,7 @@ export default {
   },
   methods: {
     allBook() {
-      fetch('/.netlify/functions/books',
+      fetch('/api/books',
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((result) => {
@@ -46,7 +45,7 @@ export default {
         })
      },
      deleteBook(id) {
-       fetch('/.netlify/functions/books/'+id,
+       fetch('/api/books/'+id,
          { headers: {'Content-Type': 'application/json'},
    	       method: 'POST',
            body: JSON.stringify({'_method':'DELETE'})})

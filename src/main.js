@@ -1,4 +1,3 @@
-// src/main.js
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -11,7 +10,7 @@ import bookIndex from './bookIndex.vue'
 import bookDetails from './bookDetails.vue'
 
 const routes = [
-  { path: '/book', 
+  { path: '/book',
     component: bookIndex,
     props: true},
   { path: '/book/show/:id',

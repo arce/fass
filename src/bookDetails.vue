@@ -1,4 +1,3 @@
-<!-- bookDetails.vue -->
 <template>
   <div class="row">
    <div class="eleven column" style="margin-top: 5%">
@@ -32,7 +31,7 @@
        <input class="u-full-width" type="tel"
          v-model="book.publisher">
       </div>
-      <router-link class="button button-primary" 
+      <router-link class="button button-primary"
         to="/book">Back</router-link>
       <a v-if='edit' class="button button-primary" style="float: right"
          v-on:click="updateBook()">Update</a>
@@ -45,9 +44,9 @@
 </template>
 
 <script>
-	
-import { useRoute } from 'vue-router'
-	
+
+import { useRoute, useRouter } from 'vue-router'
+
 export default {
   props: ['create','edit','show'],
   data: function() {
@@ -57,12 +56,12 @@ export default {
     }
   },
   created () {
-   const route = useRoute();  
+   const route = useRoute();
    this.findBook(route.params.id);
   },
   methods: {
     findBook: function(id) {
-      fetch('/.netlify/functions/books/'+id,
+      fetch('/api/books/'+id,
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((result) => {
@@ -70,10 +69,10 @@ export default {
         })
     },
     updateBook: function() {
-      this.prof['_method'] = 'PUT';
-      const route = useRoute(); 
+      const route = useRoute();
+      const router = useRouter();
       var id = route.params.id;
-      fetch('/server/book/'+id,
+      fetch('/api/books/'+id,
         { headers: {'Content-Type':'application/json'},
           method: 'POST',
           body: JSON.stringify(this.book)})
@@ -83,7 +82,8 @@ export default {
       )
     },
     createBook: function() {
-      fetch('/server/book',
+      const router = useRouter();
+      fetch('/api/books',
         { headers: {'Content-Type':'application/json'},
           method: 'POST',
           body: JSON.stringify(this.book)})
